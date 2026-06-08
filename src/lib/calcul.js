@@ -1,9 +1,13 @@
 // ─── UTILITAIRES DE CALCUL ────────────────────────────────────────────────
 // Toute la logique métier est ici. Aucun calcul ne doit être dupliqué ailleurs.
 
+/** Couleurs des états de diagnostic */
+export const RATING_COLORS = {
+  N: "#6B7280", TB: "#16a34a", B: "#65a30d", Moy: "#d97706", Mauv: "#dc2626",
+};
+
 /** Clé unique d'identification d'un poste */
 export const KEY = p => `${p.piece}|${p.poste}|${p.fourniture}`;
-
 /** Formate un montant en euros */
 export const fmt = n => n ? Math.round(n).toLocaleString("fr-FR") + " €" : "0 €";
 
