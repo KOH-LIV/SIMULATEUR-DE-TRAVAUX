@@ -1,77 +1,141 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { supabase, hasSupabase } from "./lib/supabase";
-import { calcTotaux, buildEffParams, buildPList, KEY, fmt, arrVal, orDash, RATING_COLORS } from "./lib/calcul";
-import { localParams } from "./lib/storage";
+import React, { useState, useMemo } from "react";
+import { calcTotaux, calcLigne, buildEffParams, buildPList, fmt, arrVal, orDash, RATING_COLORS } from "./lib/calcul";
+import { localParams, localVisites } from "./lib/storage";
 import { PARAMETRES_BASE } from "./data/parametres";
-import { useProjet } from "./hooks/useProjet";
-import { Nav, TABS } from "./components/Nav";
+import { Nav } from "./components/Nav";
 import { Toast } from "./components/Toast";
-import { Auth } from "./components/Auth";
 import { ProjetsTab }   from "./tabs/ProjetsTab";
 import { VisiteTab }    from "./tabs/VisiteTab";
 import { TravauxTab }   from "./tabs/TravauxTab";
 import { ResultatsTab } from "./tabs/ResultatsTab";
 import { ParamsTab }    from "./tabs/ParamsTab";
 
+const FICHE_VIDE = {
+  adresse:"", date:new Date().toISOString().slice(0,10),
+  typeBien:[], notes:"", nbLots:"", surfTerrain:"", surfSol:"", surfCarrez:"",
+  egout:"", elec:"", plomb:"",
+  etatStruct:"", etatCharp:"", etatFac:"", etatToit:"",
+  nbMenuiseries:"", typeVitrage:"", etatMenuiseries:"",
+  isolation:[], typeIsolant:"", etatIsolation:"", dpe:"",
+  typePlanchers:"", etatPlanchers:"",
+  typeSols:[], etatSols:"",
+  typeMurs:[], etatMurs:"",
+  typePlafonds:[], etatPlafonds:"",
+};
+
 export default function App() {
-  const [tab,    setTab]    = useState("projets");
-  const [user,   setUser]   = useState(null);
-  const [authReady, setAuthReady] = useState(false);
-  const [toast,  setToast]  = useState("");
-  const [params, setParams] = useState(() => localParams.get(PARAMETRES_BASE));
+  const [tab,     setTab]     = useState("projets");
+  const [toast,   setToast]   = useState("");
+  const [params,  setParams]  = useState(() => localParams.get(PARAMETRES_BASE));
+  const [visites, setVisites] = useState(() => localVisites.get([]));
+  const [projetId,setProjetId]= useState(null);
+  const [fiche,   setFiche]   = useState({...FICHE_VIDE});
+  const [qty,     setQtyState]= useState({});
+  const [ov,      setOvState] = useState({});
+  const [nbP,     setNbPState]= useState({});
 
   const showToast = msg => { setToast(msg); setTimeout(() => setToast(""), 3500); };
 
-  // ── Auth Supabase ─────────────────────────────────────────────────────────
-  useEffect(() => {
-    if (!hasSupabase()) { setAuthReady(true); return; }
+  // ── Setters atomiques ────────────────────────────────────────────────────
+  const setQty      = (k, v)        => setQtyState(m => ({...m, [k]: v}));
+  const setOv       = (k, field, v) => setOvState(m => ({...m, [k]: {...m[k], [field]: v}}));
+  const setNbP      = (pn, v)       => setNbPState(m => ({...m, [pn]: v}));
+  const updateFiche = (k, v)        => setFiche(f => ({...f, [k]: v}));
+  const toggleFiche = (k, v)        => setFiche(f => ({
+    ...f,
+    [k]: Array.isArray(f[k])
+      ? (f[k].includes(v) ? f[k].filter(x => x !== v) : [...f[k], v])
+      : [v],
+  }));
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      setAuthReady(true);
-    });
+  // ── Calculs dérivés ──────────────────────────────────────────────────────
+  const effParams = useMemo(() => buildEffParams(params, ov),                              [params, ov]);
+  const totaux    = useMemo(() => calcTotaux(params, qty, ov, nbP, effParams),             [params, qty, ov, nbP, effParams]);
+  const pList     = useMemo(() => buildPList(params),                                      [params]);
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  const handleLogout = async () => {
-    await supabase?.auth.signOut();
-    setUser(null);
+  // ── Gestion des projets ──────────────────────────────────────────────────
+  const nouveauProjet = () => {
+    setFiche({...FICHE_VIDE, date: new Date().toISOString().slice(0,10)});
+    setQtyState({}); setOvState({}); setNbPState({});
+    setProjetId(null); setTab("visite");
   };
 
-  // ── Projets ───────────────────────────────────────────────────────────────
-  const projet = useProjet(user?.id, showToast);
+  const sauvegarder = () => {
+    const id = projetId || Date.now();
+    const v  = { id, fiche, qty, ov, nbP, dateModif: new Date().toISOString(), normal: totaux.normal, haut: totaux.haut };
+    const updated = projetId
+      ? visites.map(x => x.id === projetId ? v : x)
+      : [...visites, v];
+    setVisites(updated);
+    localVisites.set(updated);
+    setProjetId(id);
+    showToast("✅ Projet sauvegardé");
+  };
 
-  // ── Paramètres effectifs + pList ─────────────────────────────────────────
-  const effParams = useMemo(() => buildEffParams(params, projet.ov), [params, projet.ov]);
-  const totaux    = useMemo(() => calcTotaux(params, projet.qty, projet.ov, projet.nbP, effParams), [params, projet.qty, projet.ov, projet.nbP, effParams]);
-  const pList     = useMemo(() => buildPList(params), [params]);
+  const chargerProjet = v => {
+    setFiche(v.fiche || {...FICHE_VIDE});
+    setQtyState(v.qty  || {});
+    setOvState(v.ov    || {});
+    setNbPState(v.nbP  || {});
+    setProjetId(v.id);
+    setTab("visite");
+  };
+
+  const supprimerProjet = id => {
+    if (!window.confirm("Supprimer ce projet définitivement ?")) return;
+    const updated = visites.filter(x => x.id !== id);
+    setVisites(updated);
+    localVisites.set(updated);
+    if (projetId === id) nouveauProjet();
+    showToast("🗑 Projet supprimé");
+  };
 
   const updateParam = (id, field, val) => {
-    const u = params.map(p => p.id === id ? { ...p, [field]: val } : p);
+    const u = params.map(p => p.id === id ? {...p, [field]: val} : p);
     setParams(u);
     localParams.set(u);
   };
 
+  // ── Export / Import JSON ─────────────────────────────────────────────────
+  const exportJSON = () => {
+    const data = { visites, exportedAt: new Date().toISOString(), version: 2 };
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], {type:"application/json"}));
+    a.download = `kohliv_projets_${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+  };
+
+  const importJSON = e => {
+    const file = e.target.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = evt => {
+      try {
+        const data = JSON.parse(evt.target.result);
+        const imported = data.visites || [];
+        if (!Array.isArray(imported) || !imported.length) { showToast("⚠ Fichier invalide"); return; }
+        const existingIds = new Set(visites.map(v => String(v.id)));
+        const toAdd = imported.filter(v => !existingIds.has(String(v.id)));
+        const merged = [...visites, ...toAdd];
+        setVisites(merged);
+        localVisites.set(merged);
+        showToast(`✅ ${toAdd.length} projet(s) importé(s)`);
+      } catch(err) { showToast("⚠ Erreur : " + err.message); }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  };
+
   // ── Export CSV ────────────────────────────────────────────────────────────
   const exportCSV = () => {
-    const { fiche, qty, ov, nbP } = projet;
     const lignes = params.filter(p => { const r = calcLigne(p,qty,ov,nbP,effParams); return r.f+r.mo>0; });
     const rows = [
-      ["KÔH-LIV — Simulateur travaux"],
-      [],
+      ["KÔH-LIV — Simulateur travaux"], [],
       ["── FICHE DU BIEN ──"],
       ["Adresse", fiche.adresse||""], ["Date de visite", fiche.date||""],
-      ["Type de bien", arrVal(fiche.typeBien)], ["Notes", fiche.notes||""],
-      [],
+      ["Type de bien", arrVal(fiche.typeBien)], ["Notes", fiche.notes||""], [],
       ["── SURFACES ──"],
       ["Nb lots", fiche.nbLots||""], ["Terrain m²", fiche.surfTerrain||""],
-      ["Au sol m²", fiche.surfSol||""], ["Carrez m²", fiche.surfCarrez||""],
-      [],
+      ["Au sol m²", fiche.surfSol||""], ["Carrez m²", fiche.surfCarrez||""], [],
       ["── DIAGNOSTIC ──"],
       ["Tout-à-l'égout", fiche.egout||""], ["Électricité", fiche.elec||""], ["Plomberie", fiche.plomb||""],
       ["Structure", fiche.etatStruct||""], ["Charpente", fiche.etatCharp||""],
@@ -81,13 +145,11 @@ export default function App() {
       ["Planchers", fiche.typePlanchers||""], ["État planchers", fiche.etatPlanchers||""],
       ["Sols", arrVal(fiche.typeSols)], ["État sols", fiche.etatSols||""],
       ["Murs", arrVal(fiche.typeMurs)], ["État murs", fiche.etatMurs||""],
-      ["Plafonds", arrVal(fiche.typePlafonds)], ["État plafonds", fiche.etatPlafonds||""],
-      [],
+      ["Plafonds", arrVal(fiche.typePlafonds)], ["État plafonds", fiche.etatPlafonds||""], [],
       ["── ESTIMATION ──"],
       ["Estimation normale (€ HT)", Math.round(totaux.normal)],
       ["Estimation haute +"+Math.round(totaux.impPct*100)+"% (€ HT)", Math.round(totaux.haut)],
-      ["Fournitures", Math.round(totaux.tF)], ["Main d'œuvre", Math.round(totaux.tMO)], ["MOE", Math.round(totaux.moe)],
-      [],
+      ["Fournitures", Math.round(totaux.tF)], ["Main d'œuvre", Math.round(totaux.tMO)], ["MOE", Math.round(totaux.moe)], [],
       ["── DÉTAIL PAR POSTE ──"],
       ["Pièce","Nb pièces","Poste","Fourniture","Méthode","Fournisseur","Référence","Coût HT","Prestataire","MO HT","Quantité","Total Fourn.","Total MO","Total HT"],
       ...lignes.map(p => {
@@ -107,12 +169,10 @@ export default function App() {
 
   // ── Export PDF ────────────────────────────────────────────────────────────
   const exportPDF = () => {
-    const { fiche, qty, ov, nbP } = projet;
     const w = window.open("","_blank"); if (!w) return;
     const etatBadge = v => v
       ? `<span style="background:${RATING_COLORS[v]||"#94a3b8"};color:#fff;padding:2px 8px;border-radius:12px;font-size:11px">${v}</span>`
       : "<span style='color:#94a3b8'>—</span>";
-
     const tableRows = params
       .filter(p => { const r=calcLigne(p,qty,ov,nbP,effParams); return r.f+r.mo>0; })
       .map(p => {
@@ -214,35 +274,22 @@ ${fiche.notes?`<div class="notes">${fiche.notes}</div>`:""}
     setTimeout(() => w.print(), 400);
   };
 
-  // ── Affichage conditionnel Auth ───────────────────────────────────────────
-  if (!authReady) return <div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"100vh",color:"#94a3b8"}}>Chargement…</div>;
-
-  // Si Supabase est configuré mais pas connecté → écran de connexion
-  if (hasSupabase() && !user) return <Auth />;
-
-  // ── Render principal ─────────────────────────────────────────────────────
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div style={{ fontFamily:"system-ui,-apple-system,sans-serif", background:"#f8fafc", minHeight:"100vh" }}>
       <Nav
         tab={tab} setTab={setTab}
-        fiche={projet.fiche} totaux={totaux}
-        projetId={projet.projetId} qty={projet.qty}
-        onLogout={hasSupabase() && user ? handleLogout : null}
-        syncing={projet.syncing}
+        fiche={fiche} totaux={totaux}
+        projetId={projetId} qty={qty}
       />
-
       <div style={{ maxWidth:900, margin:"0 auto", padding:16 }}>
-        {tab==="projets"    && <ProjetsTab visites={projet.visites} onLoad={projet.chargerProjet} onDelete={projet.supprimerProjet} onNew={projet.nouveauProjet} onExportJSON={projet.exportJSON} onImportJSON={projet.importJSON} syncing={projet.syncing}/>}
-        {tab==="visite"     && <VisiteTab fiche={projet.fiche} onUpdate={projet.updateFiche} onToggle={projet.toggleFiche}/>}
-        {tab==="travaux"    && <TravauxTab params={params} pList={pList} qty={projet.qty} setQty={projet.setQty} ov={projet.ov} setOv={projet.setOv} nbP={projet.nbP} setNbP={projet.setNbP} effParams={effParams} totaux={totaux}/>}
-        {tab==="resultats"  && <ResultatsTab params={params} qty={projet.qty} ov={projet.ov} nbP={projet.nbP} effParams={effParams} totaux={totaux} fiche={projet.fiche} onSave={() => projet.sauvegarder(totaux)} onExportCSV={exportCSV} onExportPDF={exportPDF}/>}
+        {tab==="projets"    && <ProjetsTab visites={visites} onLoad={chargerProjet} onDelete={supprimerProjet} onNew={nouveauProjet} onExportJSON={exportJSON} onImportJSON={importJSON}/>}
+        {tab==="visite"     && <VisiteTab fiche={fiche} onUpdate={updateFiche} onToggle={toggleFiche}/>}
+        {tab==="travaux"    && <TravauxTab params={params} pList={pList} qty={qty} setQty={setQty} ov={ov} setOv={setOv} nbP={nbP} setNbP={setNbP} effParams={effParams} totaux={totaux}/>}
+        {tab==="resultats"  && <ResultatsTab params={params} qty={qty} ov={ov} nbP={nbP} effParams={effParams} totaux={totaux} fiche={fiche} onSave={sauvegarder} onExportCSV={exportCSV} onExportPDF={exportPDF}/>}
         {tab==="parametres" && <ParamsTab params={params} onUpdate={updateParam} pList={pList}/>}
       </div>
-
       <Toast msg={toast} onClose={() => setToast("")}/>
     </div>
   );
 }
-
-// Import manquant dans App — doit être disponible globalement depuis calcul.js
-import { calcLigne } from "./lib/calcul";
