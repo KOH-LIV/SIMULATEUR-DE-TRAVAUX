@@ -14,7 +14,7 @@ export function Auth({ onAuthChange }) {
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: window.location.origin },
+        options: { emailRedirectTo: "https://simulateur-de-travaux-naxe2e701-kohliv.vercel.app" },
       });
       if (error) throw error;
       setSent(true);
