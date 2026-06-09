@@ -75,7 +75,7 @@ export const PARAMETRES_BASE = [
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Matelas 140x200", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Couette", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Armoire 150cm double porte + miroir", methode:"forfait", fournisseur:"", ref:"", coutHT:420, prestataire:"", moHT:80 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Bureau", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Bureau 90x50", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Chaise de bureau", methode:"forfait", fournisseur:"", ref:"", coutHT:100, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Table de chevet", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Lampe de chevet", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:0 },
