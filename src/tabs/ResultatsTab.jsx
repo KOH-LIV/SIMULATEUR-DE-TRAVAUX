@@ -2,8 +2,8 @@ import React, { useMemo } from "react";
 import { calcLigne, KEY, fmt, arrVal, orDash, RATING_COLORS } from "../lib/calcul";
 import { Card, Btn } from "../components/ui";
 
-const PIECES_ORDRE = ["Chambre","Salle d'eau","Salon","Salle TV","Salle à manger","Cuisine","Buanderie","WC commun","Dégagements","Entrée","Garage","Postes transversaux"];
-const ICONES = {"Chambre":"🛏","Salle d'eau":"🚿","Salon":"🛋","Salle TV":"📺","Salle à manger":"🍽","Cuisine":"🍳","Buanderie":"🧺","WC commun":"🚽","Dégagements":"🚪","Entrée":"🏠","Garage":"🔧","Postes transversaux":"⚙️"};
+const PIECES_ORDRE = ["Chambre","Salle d'eau","Salon","Salle TV","Salle à manger","Cuisine","Buanderie","WC commun","Dégagements","Entrée","Garage","Salle spéciale","Postes transversaux"];
+const ICONES = {"Chambre":"🛏","Salle d'eau":"🚿","Salon":"🛋","Salle TV":"📺","Salle à manger":"🍽","Cuisine":"🍳","Buanderie":"🧺","WC commun":"🚽","Dégagements":"🚪","Entrée":"🏠","Garage":"🔧","Salle spéciale":"🎯","Postes transversaux":"⚙️"};
 
 export function ResultatsTab({ params, qty, ov, nbP, effParams, totaux, fiche, onSave, onExportCSV, onExportPDF }) {
   const actives = useMemo(() =>
