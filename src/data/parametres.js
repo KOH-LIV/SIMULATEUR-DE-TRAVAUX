@@ -681,6 +681,108 @@ export const PARAMETRES_BASE = [
   { piece:"Garage", poste:"Électricité", fourniture:"Prise recharge véhicule électrique (7kW)", methode:"forfait", fournisseur:"", ref:"", coutHT:800, prestataire:"", moHT:400 },
 
   // ═══════════════════════════════════════════════════════════════════
+  // SALLE SPÉCIALE
+  // Salle de sport / jeux / musique / lecture
+  // Corps de métier : plaquiste, carreleur, peintre, menuisier, électricien
+  // Point clé : isolation acoustique renforcée systématique
+  // Pas de plomberie (sauf option vestiaire)
+  // ═══════════════════════════════════════════════════════════════════
+
+  // ── Démolition ──
+  { piece:"Salle spéciale", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
+  { piece:"Salle spéciale", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
+  { piece:"Salle spéciale", poste:"Démolition", fourniture:"Dépose cloison existante", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:20 },
+  { piece:"Salle spéciale", poste:"Démolition", fourniture:"Dépose porte + encadrement", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:80 },
+  { piece:"Salle spéciale", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Sous-couche acoustique désolidarisante", methode:"m²", fournisseur:"", ref:"", coutHT:12, prestataire:"", moHT:8 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Dalles caoutchouc sport 20mm (fitness / jeux)", methode:"m²", fournisseur:"", ref:"", coutHT:28, prestataire:"", moHT:15 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Dalles caoutchouc sport 30mm (musculation)", methode:"m²", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:15 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Parquet contrecollé chêne (lecture / musique)", methode:"m²", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:28 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Sol vinyle LVT acoustique", methode:"m²", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:15 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Moquette épaisse (acoustique / lecture)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:12 },
+  { piece:"Salle spéciale", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
+
+  // ── Cloisons (isolation acoustique renforcée) ──
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique double (création)", methode:"m²", fournisseur:"", ref:"", coutHT:28, prestataire:"", moHT:45 },
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Membrane masse lourde (renfort acoustique)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:12 },
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Rails R70-R90 désolidarisés", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Montants M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Bandes résilientes sous rails (anti-pont acoustique)", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Isolant acoustique laine de roche HD (haute densité)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Salle spéciale", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+  { piece:"Salle spéciale", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Salle spéciale", poste:"Murs", fourniture:"Panneaux acoustiques muraux (mousse / tissu)", methode:"m²", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:20 },
+  { piece:"Salle spéciale", poste:"Murs", fourniture:"Boiseries décoratives / lambris (lecture / musique)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:30 },
+  { piece:"Salle spéciale", poste:"Murs", fourniture:"Miroir mural grande surface (sport / danse)", methode:"m²", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:30 },
+  { piece:"Salle spéciale", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
+  { piece:"Salle spéciale", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
+  { piece:"Salle spéciale", poste:"Plafonds", fourniture:"Faux plafond BA13 phonique désolidarisé", methode:"m²", fournisseur:"", ref:"", coutHT:28, prestataire:"", moHT:40 },
+  { piece:"Salle spéciale", poste:"Plafonds", fourniture:"Panneaux acoustiques plafond (absorbants)", methode:"m²", fournisseur:"", ref:"", coutHT:50, prestataire:"", moHT:25 },
+  { piece:"Salle spéciale", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+
+  // ── Menuiseries extérieures ──
+  { piece:"Salle spéciale", poste:"Menuiseries ext", fourniture:"Fenêtre PVC DV acoustique (feuilleté)", methode:"forfait", fournisseur:"", ref:"", coutHT:650, prestataire:"", moHT:240 },
+  { piece:"Salle spéciale", poste:"Menuiseries ext", fourniture:"Volet roulant électrique", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:120 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Salle spéciale", poste:"Menuiseries int", fourniture:"Porte acoustique Rw≥40dB + bâti", methode:"forfait", fournisseur:"", ref:"", coutHT:800, prestataire:"", moHT:200 },
+  { piece:"Salle spéciale", poste:"Menuiseries int", fourniture:"Joint acoustique périphérique porte", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:20 },
+  { piece:"Salle spéciale", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Point lumineux plafonnier / spots encastrés", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:60 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Spot encastré (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:45 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Éclairage LED en bandeau (ambiance)", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:60 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Interrupteur va-et-vient + variateur", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:40 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Prise RJ45 / fibre (data)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:40 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Prise TV + HDMI murale (jeux / fitness)", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Radiateur à inertie (1000W)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:120 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Climatisation réversible split (confort sport)", methode:"forfait", fournisseur:"", ref:"", coutHT:1100, prestataire:"", moHT:550 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"VMC simple flux hygro (bouche)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:80 },
+  { piece:"Salle spéciale", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
+
+  // ── Plomberie (optionnel : point d'eau / douche vestiaire) ──
+  { piece:"Salle spéciale", poste:"Plomberie", fourniture:"Point d'eau (arrivée EF+EC + évacuation)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:350 },
+  { piece:"Salle spéciale", poste:"Plomberie", fourniture:"Évier / vasque de service", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:80 },
+  { piece:"Salle spéciale", poste:"Plomberie", fourniture:"Robinetterie mitigeur", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:50 },
+
+  // ── Mobilier & Équipements ──
+  // Salle de sport
+  { piece:"Salle spéciale", poste:"Équipements sport", fourniture:"Tapis de course", methode:"forfait", fournisseur:"", ref:"", coutHT:800, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements sport", fourniture:"Vélo elliptique / rameur", methode:"forfait", fournisseur:"", ref:"", coutHT:600, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements sport", fourniture:"Rack haltères + poids (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:500, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements sport", fourniture:"Barre de traction murale", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:80 },
+  { piece:"Salle spéciale", poste:"Équipements sport", fourniture:"Tapis de sol / de yoga (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements sport", fourniture:"Télé murale 55p + fixation (coaching vidéo)", methode:"forfait", fournisseur:"", ref:"", coutHT:500, prestataire:"", moHT:60 },
+  // Salle de musique
+  { piece:"Salle spéciale", poste:"Équipements musique", fourniture:"Pied de micro + câblage", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements musique", fourniture:"Diffuseurs acoustiques muraux", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:40 },
+  { piece:"Salle spéciale", poste:"Équipements musique", fourniture:"Prises audio XLR / jack encastrées", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:80 },
+  // Salle de jeux
+  { piece:"Salle spéciale", poste:"Équipements jeux", fourniture:"Table de ping-pong", methode:"forfait", fournisseur:"", ref:"", coutHT:400, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements jeux", fourniture:"Babyfoot", methode:"forfait", fournisseur:"", ref:"", coutHT:350, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements jeux", fourniture:"Billard", methode:"forfait", fournisseur:"", ref:"", coutHT:1200, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements jeux", fourniture:"Console gaming + écran 4K", methode:"forfait", fournisseur:"", ref:"", coutHT:800, prestataire:"", moHT:0 },
+  // Salle de lecture
+  { piece:"Salle spéciale", poste:"Équipements lecture", fourniture:"Bibliothèque murale sur mesure", methode:"forfait", fournisseur:"", ref:"", coutHT:800, prestataire:"", moHT:200 },
+  { piece:"Salle spéciale", poste:"Équipements lecture", fourniture:"Fauteuils de lecture (lot 2)", methode:"forfait", fournisseur:"", ref:"", coutHT:600, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements lecture", fourniture:"Canapé lecture 2 places", methode:"forfait", fournisseur:"", ref:"", coutHT:500, prestataire:"", moHT:0 },
+  { piece:"Salle spéciale", poste:"Équipements lecture", fourniture:"Luminaires lecture (lampadaire + appliques)", methode:"forfait", fournisseur:"", ref:"", coutHT:250, prestataire:"", moHT:40 },
+  // Communs
+  { piece:"Salle spéciale", poste:"Mobilier - Déco", fourniture:"Rideaux occultants acoustiques + tringle", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:30 },
+  { piece:"Salle spéciale", poste:"Mobilier - Déco", fourniture:"Rangements muraux modulaires", methode:"forfait", fournisseur:"", ref:"", coutHT:300, prestataire:"", moHT:60 },
+  { piece:"Salle spéciale", poste:"Mobilier - Déco", fourniture:"Ampoules LED (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:0 },
+  
+  // ═══════════════════════════════════════════════════════════════════
   // POSTES TRANSVERSAUX
   // Corps de métier : maçon, charpentier, couvreur, électricien, plombier
   // ═══════════════════════════════════════════════════════════════════
