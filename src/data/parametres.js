@@ -29,9 +29,14 @@ export const PARAMETRES_BASE = [
   { piece:"Chambre", poste:"Sols", fourniture:"Plinthes assorties (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
 
   // ── Cloisons ──
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Doublage isolant Placo 13+100", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:30 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison carreaux de plâtre", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:32 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Rails R48/R70/R90", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Montants M48/M70/M90", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Isolant acoustique - Laine de roche", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Isolant acoustique - Laine de verre", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
 
   // ── Murs ──
   { piece:"Chambre", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
@@ -50,7 +55,6 @@ export const PARAMETRES_BASE = [
   { piece:"Chambre", poste:"Menuiseries ext", fourniture:"Porte-fenêtre PVC DV 1 ventail", methode:"forfait", fournisseur:"", ref:"", coutHT:580, prestataire:"", moHT:240 },
   { piece:"Chambre", poste:"Menuiseries ext", fourniture:"Porte-fenêtre PVC DV 2 ventaux", methode:"forfait", fournisseur:"", ref:"", coutHT:780, prestataire:"", moHT:280 },
   { piece:"Chambre", poste:"Menuiseries ext", fourniture:"Volet roulant électrique", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:120 },
-  { piece:"Chambre", poste:"Menuiseries ext", fourniture:"Store banne / occultant", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:60 },
 
   // ── Menuiseries intérieures ──
   { piece:"Chambre", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
@@ -65,20 +69,17 @@ export const PARAMETRES_BASE = [
   { piece:"Chambre", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
   { piece:"Chambre", poste:"Électricité", fourniture:"Prise RJ45 / fibre (data)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:40 },
   { piece:"Chambre", poste:"Électricité", fourniture:"Radiateur à inertie (1000W)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:120 },
-  { piece:"Chambre", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
-
+  
   // ── Mobilier & Décoration ──
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Sommier lattes 140x200", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Matelas mémoire de forme 140x200", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Tête de lit murale", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:30 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Couette + 2 oreillers", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Armoire 2 portes coulissantes", methode:"forfait", fournisseur:"", ref:"", coutHT:420, prestataire:"", moHT:80 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Bureau + rangement", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Matelas 140x200", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Couette", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Armoire 150cm double porte + miroir", methode:"forfait", fournisseur:"", ref:"", coutHT:420, prestataire:"", moHT:80 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Bureau", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Chaise de bureau", methode:"forfait", fournisseur:"", ref:"", coutHT:100, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Table de chevet × 2", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Lampe de chevet × 2", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Table de chevet", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Lampe de chevet", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Rideaux occultants + tringle", methode:"forfait", fournisseur:"", ref:"", coutHT:90, prestataire:"", moHT:30 },
-  { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Miroir mural", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:20 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Cadres décoratifs", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:0 },
   { piece:"Chambre", poste:"Mobilier - Déco", fourniture:"Ampoules LED (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:0 },
 
@@ -93,6 +94,7 @@ export const PARAMETRES_BASE = [
   { piece:"Salle d'eau", poste:"Démolition", fourniture:"Dépose douche / baignoire", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:150 },
   { piece:"Salle d'eau", poste:"Démolition", fourniture:"Dépose meuble vasque + WC", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:100 },
   { piece:"Salle d'eau", poste:"Démolition", fourniture:"Dépose cloison existante", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:20 },
+  { piece:"Salle d'eau", poste:"Démolition", fourniture:"Évacuation douche / baignoire", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:180 },
   { piece:"Salle d'eau", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
 
   // ── Sols ──
@@ -104,7 +106,6 @@ export const PARAMETRES_BASE = [
 
   // ── Cloisons ──
   { piece:"Salle d'eau", poste:"Cloisons", fourniture:"Cloison Placo Hydrofuge BA13H", methode:"m²", fournisseur:"", ref:"", coutHT:16, prestataire:"", moHT:30 },
-  { piece:"Salle d'eau", poste:"Cloisons", fourniture:"Cloison carreaux de plâtre hydrofuge", methode:"m²", fournisseur:"", ref:"", coutHT:24, prestataire:"", moHT:35 },
   { piece:"Salle d'eau", poste:"Cloisons", fourniture:"Coffrage plomberie / niche déco", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:120 },
 
   // ── Murs ──
@@ -119,7 +120,6 @@ export const PARAMETRES_BASE = [
 
   // ── Plomberie ──
   { piece:"Salle d'eau", poste:"Plomberie", fourniture:"Arrivée eau froide + eau chaude", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:200 },
-  { piece:"Salle d'eau", poste:"Plomberie", fourniture:"Évacuation douche / baignoire", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:180 },
   { piece:"Salle d'eau", poste:"Plomberie", fourniture:"Siphon de sol douche italienne", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:120 },
   { piece:"Salle d'eau", poste:"Plomberie", fourniture:"Robinetterie mitigeur douche", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:80 },
   { piece:"Salle d'eau", poste:"Plomberie", fourniture:"Colonne de douche encastrée", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:120 },
@@ -128,10 +128,7 @@ export const PARAMETRES_BASE = [
 
   // ── Équipements ──
   { piece:"Salle d'eau", poste:"Équipements", fourniture:"Receveur douche à poser (80x80)", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:120 },
-  { piece:"Salle d'eau", poste:"Équipements", fourniture:"Douche italienne (bac à carreler)", methode:"forfait", fournisseur:"", ref:"", coutHT:350, prestataire:"", moHT:400 },
   { piece:"Salle d'eau", poste:"Équipements", fourniture:"Paroi de douche verre 8mm", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:120 },
-  { piece:"Salle d'eau", poste:"Équipements", fourniture:"Baignoire acrylique 160x70", methode:"forfait", fournisseur:"", ref:"", coutHT:350, prestataire:"", moHT:250 },
-  { piece:"Salle d'eau", poste:"Équipements", fourniture:"WC suspendu + bâti-support", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:300 },
   { piece:"Salle d'eau", poste:"Équipements", fourniture:"WC à poser", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:180 },
 
   // ── Électricité ──
