@@ -29,14 +29,14 @@ export const PARAMETRES_BASE = [
   { piece:"Chambre", poste:"Sols", fourniture:"Plinthes assorties (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
 
   // ── Cloisons ──
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Isolant acoustique-Laine de roche", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Isolant acoustique-Laine de verre", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:32 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Isolant acoustique-Laine de roche", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Isolant acoustique-Laine de verre", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
 
   // ── Murs ──
   { piece:"Chambre", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
