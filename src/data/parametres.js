@@ -29,8 +29,8 @@ export const PARAMETRES_BASE = [
   { piece:"Chambre", poste:"Sols", fourniture:"Plinthes assorties (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
 
   // ── Cloisons ──
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
-  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique SAA 120-140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard SAA 120 140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
+  { piece:"Chambre", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique SAA 120 140 (création)", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
   { piece:"Chambre", poste:"Cloisons", fourniture:"Rails R48/R70/R90", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
   { piece:"Chambre", poste:"Cloisons", fourniture:"Montants M48/M70/M90", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
   { piece:"Chambre", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:, prestataire:"", moHT: },
