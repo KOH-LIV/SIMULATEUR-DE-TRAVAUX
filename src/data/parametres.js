@@ -219,28 +219,62 @@ export const PARAMETRES_BASE = [
 
   // ═══════════════════════════════════════════════════════════════════
   // SALON
-  // Corps de métier : peintre, électricien, menuisier, carreleur
+  // Corps de métier : plaquiste, carreleur, peintre, menuisier, électricien
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
   { piece:"Salon", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
+  { piece:"Salon", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
   { piece:"Salon", poste:"Démolition", fourniture:"Dépose cloison existante", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:20 },
+  { piece:"Salon", poste:"Démolition", fourniture:"Dépose porte + encadrement", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:80 },
+  { piece:"Salon", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
   { piece:"Salon", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
   { piece:"Salon", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
   { piece:"Salon", poste:"Sols", fourniture:"Parquet contrecollé chêne", methode:"m²", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:28 },
   { piece:"Salon", poste:"Sols", fourniture:"Carrelage grès cérame (60x60)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
   { piece:"Salon", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
-  { piece:"Salon", poste:"Murs", fourniture:"Rebouchage / enduit lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+
+  // ── Cloisons ──
+  { piece:"Salon", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Salon", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique (création)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:32 },
+  { piece:"Salon", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Salon", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salon", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:0 },
+  { piece:"Salon", poste:"Cloisons", fourniture:"Isolant acoustique laine de roche", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salon", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Salon", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
   { piece:"Salon", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
   { piece:"Salon", poste:"Murs", fourniture:"Mur accent (peinture couleur / papier peint)", methode:"m²", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:20 },
+  { piece:"Salon", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
+  { piece:"Salon", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
   { piece:"Salon", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+  { piece:"Salon", poste:"Plafonds", fourniture:"Faux plafond BA13 (isolation phonique)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+
+  // ── Menuiseries extérieures ──
   { piece:"Salon", poste:"Menuiseries ext", fourniture:"Porte-fenêtre PVC DV 2 ventaux", methode:"forfait", fournisseur:"", ref:"", coutHT:780, prestataire:"", moHT:280 },
   { piece:"Salon", poste:"Menuiseries ext", fourniture:"Baie vitrée coulissante (2m)", methode:"forfait", fournisseur:"", ref:"", coutHT:1400, prestataire:"", moHT:400 },
-  { piece:"Salon", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Salon", poste:"Menuiseries ext", fourniture:"Volet roulant électrique", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:120 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Salon", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Salon", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
   { piece:"Salon", poste:"Électricité", fourniture:"Point lumineux plafonnier", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:60 },
-  { piece:"Salon", poste:"Électricité", fourniture:"Spots encastrés (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:45 },
+  { piece:"Salon", poste:"Électricité", fourniture:"Spot encastré (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:45 },
+  { piece:"Salon", poste:"Électricité", fourniture:"Interrupteur va-et-vient", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
   { piece:"Salon", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
   { piece:"Salon", poste:"Électricité", fourniture:"Prise RJ45 / TV / HDMI", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:40 },
   { piece:"Salon", poste:"Électricité", fourniture:"Radiateur à inertie (1500W)", methode:"forfait", fournisseur:"", ref:"", coutHT:350, prestataire:"", moHT:120 },
+  { piece:"Salon", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
+
+  // ── Mobilier & Décoration ──
   { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Canapé d'angle 4/5 places", methode:"forfait", fournisseur:"", ref:"", coutHT:900, prestataire:"", moHT:0 },
   { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Table basse", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:0 },
   { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Tapis 200x300", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:0 },
@@ -250,46 +284,136 @@ export const PARAMETRES_BASE = [
   { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Coussins décoratifs (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:0 },
   { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Plantes + cache-pots", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
   { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Cadres + décorations murales", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
+  { piece:"Salon", poste:"Mobilier - Déco", fourniture:"Ampoules LED (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:0 },
 
   // ═══════════════════════════════════════════════════════════════════
   // SALLE TV
+  // Corps de métier : plaquiste, carreleur, peintre, menuisier, électricien
+  // Pas de plomberie
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
   { piece:"Salle TV", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
-  { piece:"Salle TV", poste:"Sols", fourniture:"Ragréage", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Salle TV", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
+  { piece:"Salle TV", poste:"Démolition", fourniture:"Dépose cloison existante", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:20 },
+  { piece:"Salle TV", poste:"Démolition", fourniture:"Dépose porte + encadrement", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:80 },
+  { piece:"Salle TV", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Salle TV", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
   { piece:"Salle TV", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
-  { piece:"Salle TV", poste:"Sols", fourniture:"Parquet contrecollé", methode:"m²", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:28 },
-  { piece:"Salle TV", poste:"Murs", fourniture:"Peinture mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Salle TV", poste:"Sols", fourniture:"Parquet contrecollé chêne", methode:"m²", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:28 },
+  { piece:"Salle TV", poste:"Sols", fourniture:"Carrelage grès cérame (60x60)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
+  { piece:"Salle TV", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
+
+  // ── Cloisons ──
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique (création)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:32 },
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:0 },
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Isolant acoustique laine de roche", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salle TV", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Salle TV", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+  { piece:"Salle TV", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
   { piece:"Salle TV", poste:"Murs", fourniture:"Mur accent + boiseries déco", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:30 },
-  { piece:"Salle TV", poste:"Plafonds", fourniture:"Peinture plafond", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
-  { piece:"Salle TV", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Salle TV", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
+  { piece:"Salle TV", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
+  { piece:"Salle TV", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+  { piece:"Salle TV", poste:"Plafonds", fourniture:"Faux plafond BA13 (isolation phonique)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+
+  // ── Menuiseries extérieures ──
+  { piece:"Salle TV", poste:"Menuiseries ext", fourniture:"Fenêtre PVC DV 2 ventaux (120x120)", methode:"forfait", fournisseur:"", ref:"", coutHT:550, prestataire:"", moHT:220 },
+  { piece:"Salle TV", poste:"Menuiseries ext", fourniture:"Volet roulant électrique", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:120 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Salle TV", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Salle TV", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
+  { piece:"Salle TV", poste:"Électricité", fourniture:"Point lumineux plafonnier", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:60 },
+  { piece:"Salle TV", poste:"Électricité", fourniture:"Spot encastré (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:45 },
+  { piece:"Salle TV", poste:"Électricité", fourniture:"Interrupteur va-et-vient", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+  { piece:"Salle TV", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
   { piece:"Salle TV", poste:"Électricité", fourniture:"Prise TV + HDMI murale", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
-  { piece:"Salle TV", poste:"Électricité", fourniture:"Prises 2P+T (lot 4)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:100 },
-  { piece:"Salle TV", poste:"Électricité", fourniture:"Spots encastrés (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:45 },
+  { piece:"Salle TV", poste:"Électricité", fourniture:"Prise RJ45 / fibre (data)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:40 },
   { piece:"Salle TV", poste:"Électricité", fourniture:"Radiateur à inertie (1000W)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:120 },
+  { piece:"Salle TV", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
+
+  // ── Mobilier & Décoration ──
   { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"TV 65 pouces 4K + fixation murale", methode:"forfait", fournisseur:"", ref:"", coutHT:700, prestataire:"", moHT:60 },
   { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Meuble TV bas suspendu", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:0 },
-  { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Enceintes TV (barre de son)", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:0 },
+  { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Barre de son", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:0 },
   { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Fauteuils / canapé 3 places", methode:"forfait", fournisseur:"", ref:"", coutHT:600, prestataire:"", moHT:0 },
   { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Tables d'appoint", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:0 },
   { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Chromecast / Apple TV", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:0 },
   { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Rideaux occultants + tringle", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:30 },
+  { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Tapis", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+  { piece:"Salle TV", poste:"Mobilier - Déco", fourniture:"Ampoules LED (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:0 },
 
   // ═══════════════════════════════════════════════════════════════════
   // SALLE À MANGER
+  // Corps de métier : plaquiste, carreleur, peintre, menuisier, électricien
+  // Pas de plomberie
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
   { piece:"Salle à manger", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
-  { piece:"Salle à manger", poste:"Sols", fourniture:"Ragréage", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Salle à manger", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
+  { piece:"Salle à manger", poste:"Démolition", fourniture:"Dépose cloison existante", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:20 },
+  { piece:"Salle à manger", poste:"Démolition", fourniture:"Dépose porte + encadrement", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:80 },
+  { piece:"Salle à manger", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Salle à manger", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
   { piece:"Salle à manger", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
   { piece:"Salle à manger", poste:"Sols", fourniture:"Parquet contrecollé chêne", methode:"m²", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:28 },
   { piece:"Salle à manger", poste:"Sols", fourniture:"Carrelage grès cérame (60x60)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
-  { piece:"Salle à manger", poste:"Murs", fourniture:"Peinture mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
-  { piece:"Salle à manger", poste:"Plafonds", fourniture:"Peinture plafond", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+  { piece:"Salle à manger", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
+
+  // ── Cloisons ──
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Cloison Placo BA13 phonique (création)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:32 },
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Bandes résilientes sous rails", methode:"m²", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:0 },
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Isolant acoustique laine de roche", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Salle à manger", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Salle à manger", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+  { piece:"Salle à manger", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Salle à manger", poste:"Murs", fourniture:"Mur accent (peinture couleur / papier peint)", methode:"m²", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:20 },
+  { piece:"Salle à manger", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
+  { piece:"Salle à manger", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
+  { piece:"Salle à manger", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+  { piece:"Salle à manger", poste:"Plafonds", fourniture:"Faux plafond BA13", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+
+  // ── Menuiseries extérieures ──
   { piece:"Salle à manger", poste:"Menuiseries ext", fourniture:"Porte-fenêtre PVC DV 2 ventaux", methode:"forfait", fournisseur:"", ref:"", coutHT:780, prestataire:"", moHT:280 },
+  { piece:"Salle à manger", poste:"Menuiseries ext", fourniture:"Baie vitrée coulissante (2m)", methode:"forfait", fournisseur:"", ref:"", coutHT:1400, prestataire:"", moHT:400 },
+  { piece:"Salle à manger", poste:"Menuiseries ext", fourniture:"Volet roulant électrique", methode:"forfait", fournisseur:"", ref:"", coutHT:320, prestataire:"", moHT:120 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Salle à manger", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Salle à manger", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
+  { piece:"Salle à manger", poste:"Électricité", fourniture:"Point lumineux plafonnier / lustre", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:60 },
+  { piece:"Salle à manger", poste:"Électricité", fourniture:"Spot encastré (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:45 },
+  { piece:"Salle à manger", poste:"Électricité", fourniture:"Interrupteur va-et-vient", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
   { piece:"Salle à manger", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
+  { piece:"Salle à manger", poste:"Électricité", fourniture:"Prise RJ45 / TV / HDMI", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:40 },
   { piece:"Salle à manger", poste:"Électricité", fourniture:"Radiateur à inertie (1000W)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:120 },
-  { piece:"Salle à manger", poste:"Électricité", fourniture:"Lustre / suspension centrale", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:60 },
+  { piece:"Salle à manger", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
+
+  // ── Mobilier & Décoration ──
   { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Table à manger extensible (6-8 pers)", methode:"forfait", fournisseur:"", ref:"", coutHT:600, prestataire:"", moHT:0 },
   { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Chaises × 6", methode:"forfait", fournisseur:"", ref:"", coutHT:300, prestataire:"", moHT:0 },
   { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Banc", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:0 },
@@ -298,30 +422,64 @@ export const PARAMETRES_BASE = [
   { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Tapis sous table", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
   { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Miroir grand format", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:30 },
   { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Cadres + décorations", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
+  { piece:"Salle à manger", poste:"Mobilier - Déco", fourniture:"Ampoules LED (lot)", methode:"forfait", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:0 },
 
   // ═══════════════════════════════════════════════════════════════════
   // BUANDERIE
-  // Corps de métier : plombier, électricien
+  // Corps de métier : plaquiste, carreleur, peintre, plombier, électricien
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
   { piece:"Buanderie", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
-  { piece:"Buanderie", poste:"Sols", fourniture:"Ragréage", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:15 },
-  { piece:"Buanderie", poste:"Sols", fourniture:"Carrelage antidérapant (30x30)", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:45 },
-  { piece:"Buanderie", poste:"Sols", fourniture:"Sol vinyle hydro", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:15 },
-  { piece:"Buanderie", poste:"Murs", fourniture:"Peinture hydrofuge", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+  { piece:"Buanderie", poste:"Démolition", fourniture:"Dépose équipements existants (LL/SL)", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:100 },
+  { piece:"Buanderie", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Buanderie", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:15 },
+  { piece:"Buanderie", poste:"Sols", fourniture:"Étanchéité sous carrelage (SPEC)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:15 },
+  { piece:"Buanderie", poste:"Sols", fourniture:"Carrelage grès antidérapant (30x30)", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:45 },
+  { piece:"Buanderie", poste:"Sols", fourniture:"Sol vinyle LVT hydro", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:15 },
+  { piece:"Buanderie", poste:"Sols", fourniture:"Siphon de sol (évacuation)", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:80 },
+
+  // ── Cloisons ──
+  { piece:"Buanderie", poste:"Cloisons", fourniture:"Cloison Placo Hydrofuge BA13H (création)", methode:"m²", fournisseur:"", ref:"", coutHT:16, prestataire:"", moHT:30 },
+  { piece:"Buanderie", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Buanderie", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Buanderie", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Buanderie", poste:"Murs", fourniture:"Peinture hydrofuge (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+  { piece:"Buanderie", poste:"Murs", fourniture:"Faïence murale (zone humide)", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:50 },
+
+  // ── Plafonds ──
   { piece:"Buanderie", poste:"Plafonds", fourniture:"Peinture plafond hydrofuge", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
-  { piece:"Buanderie", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Buanderie", poste:"Plafonds", fourniture:"Faux plafond hydrofuge (PVC ou BA13H)", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:32 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Buanderie", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Buanderie", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Plomberie ──
   { piece:"Buanderie", poste:"Plomberie", fourniture:"Arrivée eau froide lave-linge", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:140 },
   { piece:"Buanderie", poste:"Plomberie", fourniture:"Évacuation lave-linge", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:140 },
   { piece:"Buanderie", poste:"Plomberie", fourniture:"Chauffe-eau 200L (fourniture + pose)", methode:"forfait", fournisseur:"", ref:"", coutHT:700, prestataire:"", moHT:300 },
   { piece:"Buanderie", poste:"Plomberie", fourniture:"Arrivée + évacuation chauffe-eau", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:160 },
+  { piece:"Buanderie", poste:"Plomberie", fourniture:"Robinetterie eau froide (vanne d'arrêt)", methode:"forfait", fournisseur:"", ref:"", coutHT:30, prestataire:"", moHT:40 },
+
+  // ── Électricité ──
+  { piece:"Buanderie", poste:"Électricité", fourniture:"Point lumineux étanche", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:65 },
+  { piece:"Buanderie", poste:"Électricité", fourniture:"Interrupteur", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+  { piece:"Buanderie", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
   { piece:"Buanderie", poste:"Électricité", fourniture:"Circuit spécialisé lave-linge (20A)", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:100 },
   { piece:"Buanderie", poste:"Électricité", fourniture:"Circuit spécialisé sèche-linge (20A)", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:100 },
-  { piece:"Buanderie", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
   { piece:"Buanderie", poste:"Électricité", fourniture:"Évacuation air chaud sèche-linge", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:100 },
-  { piece:"Buanderie", poste:"Électricité", fourniture:"Point lumineux", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:60 },
+  { piece:"Buanderie", poste:"Électricité", fourniture:"VMC simple flux hygro (bouche)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:80 },
+
+  // ── Mobilier ──
   { piece:"Buanderie", poste:"Mobilier", fourniture:"Étagères de rangement", methode:"forfait", fournisseur:"", ref:"", coutHT:120, prestataire:"", moHT:40 },
   { piece:"Buanderie", poste:"Mobilier", fourniture:"Plan de travail / table repassage", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
+
+  // ── Électroménager ──
   { piece:"Buanderie", poste:"Électroménager", fourniture:"Lave-linge 8kg A+++", methode:"forfait", fournisseur:"", ref:"", coutHT:520, prestataire:"", moHT:80 },
   { piece:"Buanderie", poste:"Électroménager", fourniture:"Sèche-linge à condensation 8kg", methode:"forfait", fournisseur:"", ref:"", coutHT:480, prestataire:"", moHT:80 },
   { piece:"Buanderie", poste:"Électroménager", fourniture:"Fer à repasser vapeur", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:0 },
@@ -329,59 +487,155 @@ export const PARAMETRES_BASE = [
 
   // ═══════════════════════════════════════════════════════════════════
   // WC COMMUN
-  // Corps de métier : plombier, carreleur, électricien
+  // Corps de métier : plaquiste, carreleur, plombier, électricien
   // ═══════════════════════════════════════════════════════════════════
 
-  { piece:"WC commun", poste:"Démolition", fourniture:"Dépose WC + faïence existants", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:150 },
-  { piece:"WC commun", poste:"Sols", fourniture:"Ragréage", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:15 },
-  { piece:"WC commun", poste:"Sols", fourniture:"Étanchéité sous carrelage", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:15 },
+  // ── Démolition ──
+  { piece:"WC commun", poste:"Démolition", fourniture:"Dépose carrelage sol", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:18 },
+  { piece:"WC commun", poste:"Démolition", fourniture:"Dépose faïence murale", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:22 },
+  { piece:"WC commun", poste:"Démolition", fourniture:"Dépose WC + meuble vasque", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:150 },
+  { piece:"WC commun", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"WC commun", poste:"Sols", fourniture:"Ragréage / préparation chape", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:15 },
+  { piece:"WC commun", poste:"Sols", fourniture:"Étanchéité sous carrelage (SPEC)", methode:"m²", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:15 },
   { piece:"WC commun", poste:"Sols", fourniture:"Carrelage grès cérame (30x60)", methode:"m²", fournisseur:"", ref:"", coutHT:28, prestataire:"", moHT:50 },
-  { piece:"WC commun", poste:"Cloisons", fourniture:"Cloison Placo Hydrofuge BA13H", methode:"m²", fournisseur:"", ref:"", coutHT:16, prestataire:"", moHT:30 },
+
+  // ── Cloisons ──
+  { piece:"WC commun", poste:"Cloisons", fourniture:"Cloison Placo Hydrofuge BA13H (création)", methode:"m²", fournisseur:"", ref:"", coutHT:16, prestataire:"", moHT:30 },
+  { piece:"WC commun", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"WC commun", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"WC commun", poste:"Cloisons", fourniture:"Coffrage bâti-support WC", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:120 },
+  { piece:"WC commun", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"WC commun", poste:"Murs", fourniture:"Étanchéité murale (SPEC zone humide)", methode:"m²", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:15 },
   { piece:"WC commun", poste:"Murs", fourniture:"Faïence murale (20x60)", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:50 },
-  { piece:"WC commun", poste:"Murs", fourniture:"Peinture hydrofuge", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+  { piece:"WC commun", poste:"Murs", fourniture:"Peinture hydrofuge (zones non carrelées)", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
   { piece:"WC commun", poste:"Plafonds", fourniture:"Peinture plafond hydrofuge", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:20 },
-  { piece:"WC commun", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
-  { piece:"WC commun", poste:"Plomberie", fourniture:"Arrivée eau WC", methode:"forfait", fournisseur:"", ref:"", coutHT:50, prestataire:"", moHT:120 },
+  { piece:"WC commun", poste:"Plafonds", fourniture:"Faux plafond hydrofuge (PVC ou BA13H)", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:32 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"WC commun", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"WC commun", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Plomberie ──
+  { piece:"WC commun", poste:"Plomberie", fourniture:"Arrivée eau froide WC + vasque", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:180 },
   { piece:"WC commun", poste:"Plomberie", fourniture:"Évacuation WC", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:140 },
-  { piece:"WC commun", poste:"Plomberie", fourniture:"Arrivée eau vasque", methode:"forfait", fournisseur:"", ref:"", coutHT:50, prestataire:"", moHT:100 },
-  { piece:"WC commun", poste:"Plomberie", fourniture:"Mitigeur vasque", methode:"forfait", fournisseur:"", ref:"", coutHT:70, prestataire:"", moHT:50 },
-  { piece:"WC commun", poste:"Équipement", fourniture:"WC suspendu + bâti-support", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:300 },
-  { piece:"WC commun", poste:"Électricité", fourniture:"Point lumineux étanche", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:65 },
-  { piece:"WC commun", poste:"Électricité", fourniture:"Interrupteur", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
-  { piece:"WC commun", poste:"Électricité", fourniture:"VMC / extraction (bouche)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:80 },
+  { piece:"WC commun", poste:"Plomberie", fourniture:"Évacuation vasque (siphon + bonde)", methode:"forfait", fournisseur:"", ref:"", coutHT:30, prestataire:"", moHT:40 },
+  { piece:"WC commun", poste:"Plomberie", fourniture:"Robinetterie mitigeur vasque", methode:"forfait", fournisseur:"", ref:"", coutHT:70, prestataire:"", moHT:50 },
+
+  // ── Équipements ──
+  { piece:"WC commun", poste:"Équipements", fourniture:"WC suspendu + bâti-support", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:300 },
+  { piece:"WC commun", poste:"Équipements", fourniture:"WC à poser (alternative éco)", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:180 },
+
+  // ── Électricité ──
+  { piece:"WC commun", poste:"Électricité", fourniture:"Point lumineux plafonnier étanche", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:65 },
+  { piece:"WC commun", poste:"Électricité", fourniture:"Applique miroir / hublot", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:50 },
+  { piece:"WC commun", poste:"Électricité", fourniture:"Interrupteur (zone hors eau)", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+  { piece:"WC commun", poste:"Électricité", fourniture:"VMC simple flux hygro (bouche)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:80 },
+
+  // ── Mobilier ──
   { piece:"WC commun", poste:"Mobilier", fourniture:"Meuble vasque suspendu 50cm", methode:"forfait", fournisseur:"", ref:"", coutHT:250, prestataire:"", moHT:80 },
-  { piece:"WC commun", poste:"Mobilier", fourniture:"Miroir", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:20 },
+  { piece:"WC commun", poste:"Mobilier", fourniture:"Miroir LED", methode:"forfait", fournisseur:"", ref:"", coutHT:100, prestataire:"", moHT:30 },
+  { piece:"WC commun", poste:"Mobilier", fourniture:"Étagère murale", methode:"forfait", fournisseur:"", ref:"", coutHT:50, prestataire:"", moHT:20 },
   { piece:"WC commun", poste:"Mobilier", fourniture:"Porte-papier + brosse WC + crochet", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:15 },
 
   // ═══════════════════════════════════════════════════════════════════
   // DÉGAGEMENTS / COULOIRS
+  // Corps de métier : plaquiste, carreleur, peintre, menuisier, électricien
+  // Pas de plomberie
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
   { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
-  { piece:"Dégagements", poste:"Sols", fourniture:"Ragréage", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose cloison existante", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:20 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose porte + encadrement", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:80 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Dégagements", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
   { piece:"Dégagements", poste:"Sols", fourniture:"Carrelage grès cérame (30x60)", methode:"m²", fournisseur:"", ref:"", coutHT:28, prestataire:"", moHT:45 },
   { piece:"Dégagements", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
   { piece:"Dégagements", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
-  { piece:"Dégagements", poste:"Murs", fourniture:"Peinture mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
-  { piece:"Dégagements", poste:"Plafonds", fourniture:"Peinture plafond", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
-  { piece:"Dégagements", poste:"Électricité", fourniture:"Point lumineux / détecteur présence", methode:"forfait", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:65 },
+
+  // ── Cloisons ──
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Dégagements", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+  { piece:"Dégagements", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Dégagements", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
+  { piece:"Dégagements", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
+  { piece:"Dégagements", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Dégagements", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Dégagements", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Point lumineux / détecteur de présence", methode:"forfait", fournisseur:"", ref:"", coutHT:45, prestataire:"", moHT:65 },
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Interrupteur / minuterie", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
   { piece:"Dégagements", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
 
   // ═══════════════════════════════════════════════════════════════════
   // ENTRÉE
+  // Corps de métier : plaquiste, carreleur, peintre, menuisier, électricien
+  // Pas de plomberie
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
   { piece:"Entrée", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
   { piece:"Entrée", poste:"Démolition", fourniture:"Dépose porte d'entrée existante", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:120 },
-  { piece:"Entrée", poste:"Sols", fourniture:"Ragréage", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Entrée", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
+  { piece:"Entrée", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Entrée", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
   { piece:"Entrée", poste:"Sols", fourniture:"Carrelage grès cérame (40x80)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
-  { piece:"Entrée", poste:"Murs", fourniture:"Peinture mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
-  { piece:"Entrée", poste:"Plafonds", fourniture:"Peinture plafond", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+  { piece:"Entrée", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
+  { piece:"Entrée", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
+
+  // ── Cloisons ──
+  { piece:"Entrée", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Entrée", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Entrée", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Entrée", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+
+  // ── Murs ──
+  { piece:"Entrée", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+  { piece:"Entrée", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Entrée", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+
+  // ── Plafonds ──
+  { piece:"Entrée", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
+  { piece:"Entrée", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+
+  // ── Menuiseries extérieures ──
   { piece:"Entrée", poste:"Menuiseries ext", fourniture:"Porte d'entrée blindée (isolation + sécurité)", methode:"forfait", fournisseur:"", ref:"", coutHT:1200, prestataire:"", moHT:400 },
   { piece:"Entrée", poste:"Menuiseries ext", fourniture:"Serrure connectée / à code", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:80 },
   { piece:"Entrée", poste:"Menuiseries ext", fourniture:"Visiophone / interphone", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:120 },
+
+  // ── Menuiseries intérieures ──
+  { piece:"Entrée", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Entrée", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
   { piece:"Entrée", poste:"Électricité", fourniture:"Point lumineux / applique", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:60 },
+  { piece:"Entrée", poste:"Électricité", fourniture:"Interrupteur va-et-vient", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
   { piece:"Entrée", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
+  { piece:"Entrée", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
+
+  // ── Mobilier ──
   { piece:"Entrée", poste:"Mobilier", fourniture:"Meuble entrée (rangement chaussures)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:0 },
   { piece:"Entrée", poste:"Mobilier", fourniture:"Patère / portemanteau mural", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:20 },
   { piece:"Entrée", poste:"Mobilier", fourniture:"Miroir d'entrée", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:20 },
@@ -389,14 +643,41 @@ export const PARAMETRES_BASE = [
 
   // ═══════════════════════════════════════════════════════════════════
   // GARAGE
+  // Corps de métier : maçon, menuisier, électricien
+  // Pas de plomberie, pas de mobilier déco
   // ═══════════════════════════════════════════════════════════════════
 
+  // ── Démolition ──
+  { piece:"Garage", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
+  { piece:"Garage", poste:"Démolition", fourniture:"Dépose porte de garage existante", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:150 },
+  { piece:"Garage", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+
+  // ── Sols ──
+  { piece:"Garage", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Garage", poste:"Sols", fourniture:"Dalle béton (rattrapage de niveau)", methode:"m²", fournisseur:"", ref:"", coutHT:30, prestataire:"", moHT:35 },
+  { piece:"Garage", poste:"Sols", fourniture:"Peinture époxy sol garage", methode:"m²", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:18 },
+  { piece:"Garage", poste:"Sols", fourniture:"Carrelage grès cérame (40x40)", methode:"m²", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:40 },
+
+  // ── Murs ──
+  { piece:"Garage", poste:"Murs", fourniture:"Peinture murs béton / enduit", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Garage", poste:"Murs", fourniture:"Isolation murs (doublage intérieur)", methode:"m²", fournisseur:"", ref:"", coutHT:20, prestataire:"", moHT:28 },
+
+  // ── Plafonds ──
+  { piece:"Garage", poste:"Plafonds", fourniture:"Peinture plafond béton", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+
+  // ── Menuiseries extérieures ──
   { piece:"Garage", poste:"Menuiseries ext", fourniture:"Porte de garage sectionnelle motorisée", methode:"forfait", fournisseur:"", ref:"", coutHT:1800, prestataire:"", moHT:500 },
   { piece:"Garage", poste:"Menuiseries ext", fourniture:"Porte de garage basculante", methode:"forfait", fournisseur:"", ref:"", coutHT:1100, prestataire:"", moHT:400 },
+
+  // ── Menuiseries intérieures ──
   { piece:"Garage", poste:"Menuiseries int", fourniture:"Porte coupe-feu EI30 + bâti", methode:"forfait", fournisseur:"", ref:"", coutHT:500, prestataire:"", moHT:180 },
+  { piece:"Garage", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+
+  // ── Électricité ──
   { piece:"Garage", poste:"Électricité", fourniture:"Tableau électrique secondaire", methode:"forfait", fournisseur:"", ref:"", coutHT:300, prestataire:"", moHT:250 },
-  { piece:"Garage", poste:"Électricité", fourniture:"Prises 2P+T (lot 4)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:100 },
   { piece:"Garage", poste:"Électricité", fourniture:"Point lumineux / réglette LED", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:60 },
+  { piece:"Garage", poste:"Électricité", fourniture:"Interrupteur", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+  { piece:"Garage", poste:"Électricité", fourniture:"Prises 2P+T (lot 4)", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:100 },
   { piece:"Garage", poste:"Électricité", fourniture:"Prise recharge véhicule électrique (7kW)", methode:"forfait", fournisseur:"", ref:"", coutHT:800, prestataire:"", moHT:400 },
 
   // ═══════════════════════════════════════════════════════════════════
