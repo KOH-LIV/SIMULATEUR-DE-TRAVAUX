@@ -5,7 +5,7 @@ import { Card, Btn } from "../components/ui";
 const PIECES_ORDRE = ["Chambre","Salle d'eau","Salon","Salle TV","Salle à manger","Cuisine","Buanderie","WC commun","Dégagements","Garage","Salle spéciale","Postes transversaux"];
 const ICONES = {"Chambre":"🛏","Salle d'eau":"🚿","Salon":"🛋","Salle TV":"📺","Salle à manger":"🍽","Cuisine":"🍳","Buanderie":"🧺","WC commun":"🚽","Dégagements":"🚪","Garage":"🔧","Salle spéciale":"🎯","Postes transversaux":"⚙️"};
 
-export function ResultatsTab({ params, qty, ov, nbP, effParams, totaux, fiche, onSave, onExportCSV, onExportPDF }) {
+export function ResultatasTab({ params, qty, ov, nbP, effParams, totaux, fiche, onSave, onExportCSV, onExportPDF }) {
   const actives = useMemo(() =>
     params.filter(p => { const r = calcLigne(p,qty,ov,nbP,effParams); return r.f+r.mo > 0; }),
     [params, qty, ov, nbP, effParams]
@@ -17,15 +17,33 @@ export function ResultatsTab({ params, qty, ov, nbP, effParams, totaux, fiche, o
     return m;
   }, [actives]);
 
+  // ─── Calcul prix/m² ───────────────────────────────────────────────────
+  const surfCarrez = parseFloat(fiche.surfCarrez) || 0;
+  const prixParM2 = surfCarrez > 0 ? Math.round(totaux.normal / surfCarrez) : null;
+
   return (
     <div>
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,marginBottom:12}}>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12,marginBottom:12}}>
+        {/* ─── Prix/m² ─────────────────────────────────────────────────────── */}
+        <div style={{background:"linear-gradient(135deg,#059669,#10b981)",borderRadius:14,padding:"18px 22px",color:"#fff"}}>
+          <div style={{fontSize:11,opacity:.8,marginBottom:4}}>💰 Prix / m²</div>
+          <div style={{fontSize:26,fontWeight:800}}>
+            {prixParM2 ? `${prixParM2.toLocaleString("fr-FR")} €` : "—"}
+          </div>
+          <div style={{fontSize:11,opacity:.7,marginTop:4}}>
+            {surfCarrez > 0 ? `Surface : ${surfCarrez} m²` : "Surface non saisie"}
+          </div>
+        </div>
+
+        {/* ─── Estimation normale ───────────────────────────────────────────── */}
         <div style={{background:"linear-gradient(135deg,#1d4ed8,#3b82f6)",borderRadius:14,padding:"18px 22px",color:"#fff"}}>
           <div style={{fontSize:11,opacity:.8,marginBottom:4}}>✓ Estimation normale</div>
           <div style={{fontSize:26,fontWeight:800}}>{fmt(totaux.normal)}</div>
           <div style={{fontSize:11,opacity:.7,marginTop:4}}>Travaux + MOE ({Math.round(totaux.moePct*100)}%)</div>
         </div>
-        <div style={{background:"linear-gradient(135deg,#d97706,#f59e0b)",borderRadius:14,padding:"18px 22px",color:"#fff"}}>
+
+        {/* ─── Estimation haute ───────────────────────────────────────────── */}
+        <div style={{background:"linear-gradient(135deg,#d97706,#f59e0b)",borderRadius:14,padding:"18px 22x",color:"#fff"}}>
           <div style={{fontSize:11,opacity:.8,marginBottom:4}}>⚠ Estimation haute (+{Math.round(totaux.impPct*100)}%)</div>
           <div style={{fontSize:26,fontWeight:800}}>{fmt(totaux.haut)}</div>
           <div style={{fontSize:11,opacity:.7,marginTop:4}}>Imprévus inclus</div>
