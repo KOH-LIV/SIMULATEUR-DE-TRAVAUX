@@ -1089,6 +1089,8 @@ function App() {
       ["Estimation normale (€ HT)", Math.round(totaux.normal)],
       ["Estimation haute +"+Math.round(totaux.impPct*100)+"% (€ HT)", Math.round(totaux.haut)],
       ["Fournitures", Math.round(totaux.tF)], ["Main d'œuvre", Math.round(totaux.tMO)], ["MOE", Math.round(totaux.moe)],
+      ["Surface Carrez (m²)", fiche.surfCarrez||"—"],
+      ["Prix / m²", fiche.surfCarrez ? Math.round(totaux.normal / parseFloat(fiche.surfCarrez)) + " €/m²" : "—"],
       [],
       ["── DÉTAIL PAR POSTE ──"],
       ["Pièce","Nb pièces","Poste","Fourniture","Méthode","Fournisseur","Référence","Coût HT","Prestataire","MO HT","Quantité","Total Fourn.","Total MO","Total HT"],
@@ -1231,6 +1233,7 @@ ${fiche.notes?`<div class="notes">${fiche.notes}</div>`:""}
 <div class="totaux">
 <div class="tc tn"><div class="tl">✓ Estimation normale</div><div class="tv">${fmt(totaux.normal)}</div></div>
 <div class="tc th"><div class="tl">⚠ Estimation haute (+${Math.round(totaux.impPct*100)}%)</div><div class="tv">${fmt(totaux.haut)}</div></div>
+<div class="tc" style="background:linear-gradient(135deg,#059669,#10b981)"><div class="tl">💰 Prix / m²</div><div class="tv">${fiche.surfCarrez && parseFloat(fiche.surfCarrez) > 0 ? Math.round(totaux.normal / parseFloat(fiche.surfCarrez)).toLocaleString("fr-FR") + " €" : "—"}</div></div>
 </div>
 <div class="g3">
 <div class="f"><div class="fl">Fournitures</div><div class="fv">${fmt(totaux.tF)}</div></div>
