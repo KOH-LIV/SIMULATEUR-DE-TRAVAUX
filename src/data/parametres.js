@@ -594,52 +594,52 @@ export const PARAMETRES_BASE = [
   // ═══════════════════════════════════════════════════════════════════
 
   // ── Démolition ──
-  { piece:"Entrée", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
-  { piece:"Entrée", poste:"Démolition", fourniture:"Dépose porte d'entrée existante", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:120 },
-  { piece:"Entrée", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
-  { piece:"Entrée", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose revêtement sol existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:12 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose porte d'entrée existante", methode:"forfait", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:120 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Dépose revêtement mural existant", methode:"m²", fournisseur:"", ref:"", coutHT:0, prestataire:"", moHT:15 },
+  { piece:"Dégagements", poste:"Démolition", fourniture:"Évacuation gravats (benne)", methode:"forfait", fournisseur:"", ref:"", coutHT:150, prestataire:"", moHT:0 },
 
   // ── Sols ──
-  { piece:"Entrée", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
-  { piece:"Entrée", poste:"Sols", fourniture:"Carrelage grès cérame (40x80)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
-  { piece:"Entrée", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
-  { piece:"Entrée", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
+  { piece:"Dégagements", poste:"Sols", fourniture:"Ragréage / préparation support", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:12 },
+  { piece:"Dégagements", poste:"Sols", fourniture:"Carrelage grès cérame (40x80)", methode:"m²", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:50 },
+  { piece:"Dégagements", poste:"Sols", fourniture:"Sol vinyle LVT clipsable", methode:"m²", fournisseur:"", ref:"", coutHT:22, prestataire:"", moHT:15 },
+  { piece:"Dégagements", poste:"Sols", fourniture:"Plinthes (ml)", methode:"m", fournisseur:"", ref:"", coutHT:4, prestataire:"", moHT:6 },
 
   // ── Cloisons ──
-  { piece:"Entrée", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
-  { piece:"Entrée", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
-  { piece:"Entrée", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
-  { piece:"Entrée", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Cloison Placo BA13 standard (création)", methode:"m²", fournisseur:"", ref:"", coutHT:14, prestataire:"", moHT:28 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Rails R48-R70-R90", methode:"m²", fournisseur:"", ref:"", coutHT:6, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Montants M48-M70-M90", methode:"m²", fournisseur:"", ref:"", coutHT:8, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Cloisons", fourniture:"Fixations et accessoires", methode:"m²", fournisseur:"", ref:"", coutHT:3, prestataire:"", moHT:0 },
 
   // ── Murs ──
-  { piece:"Entrée", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
-  { piece:"Entrée", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
-  { piece:"Entrée", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
+  { piece:"Dégagements", poste:"Murs", fourniture:"Rebouchage / enduit de lissage", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:12 },
+  { piece:"Dégagements", poste:"Murs", fourniture:"Peinture acrylique mate (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:15 },
+  { piece:"Dégagements", poste:"Murs", fourniture:"Toile de verre + peinture", methode:"m²", fournisseur:"", ref:"", coutHT:10, prestataire:"", moHT:18 },
 
   // ── Plafonds ──
-  { piece:"Entrée", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
-  { piece:"Entrée", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
+  { piece:"Dégagements", poste:"Plafonds", fourniture:"Rebouchage / enduit plafond", methode:"m²", fournisseur:"", ref:"", coutHT:5, prestataire:"", moHT:14 },
+  { piece:"Dégagements", poste:"Plafonds", fourniture:"Peinture plafond (2 couches)", methode:"m²", fournisseur:"", ref:"", coutHT:7, prestataire:"", moHT:18 },
 
   // ── Menuiseries extérieures ──
-  { piece:"Entrée", poste:"Menuiseries ext", fourniture:"Porte d'entrée blindée (isolation + sécurité)", methode:"forfait", fournisseur:"", ref:"", coutHT:1200, prestataire:"", moHT:400 },
-  { piece:"Entrée", poste:"Menuiseries ext", fourniture:"Serrure connectée / à code", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:80 },
-  { piece:"Entrée", poste:"Menuiseries ext", fourniture:"Visiophone / interphone", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:120 },
+  { piece:"Dégagements", poste:"Menuiseries ext", fourniture:"Porte d'entrée blindée (isolation + sécurité)", methode:"forfait", fournisseur:"", ref:"", coutHT:1200, prestataire:"", moHT:400 },
+  { piece:"Dégagements", poste:"Menuiseries ext", fourniture:"Serrure connectée / à code", methode:"forfait", fournisseur:"", ref:"", coutHT:200, prestataire:"", moHT:80 },
+  { piece:"Dégagements", poste:"Menuiseries ext", fourniture:"Visiophone / interphone", methode:"forfait", fournisseur:"", ref:"", coutHT:180, prestataire:"", moHT:120 },
 
   // ── Menuiseries intérieures ──
-  { piece:"Entrée", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
-  { piece:"Entrée", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
+  { piece:"Dégagements", poste:"Menuiseries int", fourniture:"Porte isoplane + bâti (pose incluse)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:140 },
+  { piece:"Dégagements", poste:"Menuiseries int", fourniture:"Poignée de porte", methode:"forfait", fournisseur:"", ref:"", coutHT:35, prestataire:"", moHT:20 },
 
   // ── Électricité ──
-  { piece:"Entrée", poste:"Électricité", fourniture:"Point lumineux / applique", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:60 },
-  { piece:"Entrée", poste:"Électricité", fourniture:"Interrupteur va-et-vient", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
-  { piece:"Entrée", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
-  { piece:"Entrée", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Point lumineux / applique", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:60 },
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Interrupteur va-et-vient", methode:"forfait", fournisseur:"", ref:"", coutHT:18, prestataire:"", moHT:30 },
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Prise 2P+T (à l'unité)", methode:"forfait", fournisseur:"", ref:"", coutHT:15, prestataire:"", moHT:25 },
+  { piece:"Dégagements", poste:"Électricité", fourniture:"Détecteur de fumée DAAF", methode:"forfait", fournisseur:"", ref:"", coutHT:25, prestataire:"", moHT:20 },
 
   // ── Mobilier ──
-  { piece:"Entrée", poste:"Mobilier", fourniture:"Meuble entrée (rangement chaussures)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:0 },
-  { piece:"Entrée", poste:"Mobilier", fourniture:"Patère / portemanteau mural", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:20 },
-  { piece:"Entrée", poste:"Mobilier", fourniture:"Miroir d'entrée", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:20 },
-  { piece:"Entrée", poste:"Décoration", fourniture:"Tableau / numéro immeuble", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Mobilier", fourniture:"Meuble entrée (rangement chaussures)", methode:"forfait", fournisseur:"", ref:"", coutHT:280, prestataire:"", moHT:0 },
+  { piece:"Dégagements", poste:"Mobilier", fourniture:"Patère / portemanteau mural", methode:"forfait", fournisseur:"", ref:"", coutHT:60, prestataire:"", moHT:20 },
+  { piece:"Dégagements", poste:"Mobilier", fourniture:"Miroir d'entrée", methode:"forfait", fournisseur:"", ref:"", coutHT:80, prestataire:"", moHT:20 },
+  { piece:"Dégagements", poste:"Décoration", fourniture:"Tableau / numéro immeuble", methode:"forfait", fournisseur:"", ref:"", coutHT:40, prestataire:"", moHT:0 },
 
   // ═══════════════════════════════════════════════════════════════════
   // GARAGE
