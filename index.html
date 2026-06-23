@@ -744,10 +744,23 @@ function ResultatsTab({ params, qty, ov, nbP, effParams, totaux, fiche, onSave, 
     return m;
   }, [actives]);
 
+  // ─── Calcul prix/m² ───────────────────────────────────────────────────
+  const surfCarrez = parseFloat(fiche.surfCarrez) || 0;
+  const prixParM2 = surfCarrez > 0 ? Math.round(totaux.normal / surfCarrez) : null;
+
   return (
     <div>
       {/* Totaux */}
-      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12, marginBottom:12 }}>
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:12, marginBottom:12 }}>
+        <div style={{ background:"linear-gradient(135deg,#059669,#10b981)", borderRadius:14, padding:"18px 22px", color:"#fff" }}>
+          <div style={{ fontSize:11, opacity:.8, marginBottom:4 }}>💰 Prix / m²</div>
+          <div style={{ fontSize:26, fontWeight:800 }}>
+            {prixParM2 ? `${prixParM2.toLocaleString("fr-FR")} €` : "—"}
+          </div>
+          <div style={{ fontSize:11, opacity:.7, marginTop:4 }}>
+            {surfCarrez > 0 ? `Surface : ${surfCarrez} m²` : "Surface non saisie"}
+          </div>
+        </div>
         <div style={{ background:"linear-gradient(135deg,#1d4ed8,#3b82f6)", borderRadius:14, padding:"18px 22px", color:"#fff" }}>
           <div style={{ fontSize:11, opacity:.8, marginBottom:4 }}>✓ Estimation normale</div>
           <div style={{ fontSize:26, fontWeight:800 }}>{fmt(totaux.normal)}</div>
