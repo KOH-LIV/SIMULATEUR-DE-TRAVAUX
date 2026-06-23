@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from "react";
 import { calcLigne, KEY, fmt } from "../lib/calcul";
 
-const PIECES_ORDRE = ["Chambre","Salle d'eau","Salon","Salle TV","Salle à manger","Cuisine","Buanderie","WC commun","Dégagements","Entrée","Garage","Salle spéciale","Postes transversaux"];
-const ICONES = {"Chambre":"🛏","Salle d'eau":"🚿","Salon":"🛋","Salle TV":"📺","Salle à manger":"🍽","Cuisine":"🍳","Buanderie":"🧺","WC commun":"🚽","Dégagements":"🚪","Entrée":"🏠","Garage":"🔧","Salle spéciale":"🎯","Postes transversaux":"⚙️"};
+const PIECES_ORDRE = ["Chambre","Salle d'eau","Salon","Salle TV","Salle à manger","Cuisine","Buanderie","WC commun","Dégagements","Garage","Salle spéciale","Postes transversaux"];
+const ICONES = {"Chambre":"🛏","Salle d'eau":"🚿","Salon":"🛋","Salle TV":"📺","Salle à manger":"🍽","Cuisine":"🍳","Buanderie":"🧺","WC commun":"🚽","Dégagements":"🚪","Garage":"🔧","Salle spéciale":"🎯","Postes transversaux":"⚙️"};
 
 export function TravauxTab({ params, pList, qty, setQty, ov, setOv, nbP, setNbP, effParams, totaux }) {
   const [open, setOpen] = useState(null);
