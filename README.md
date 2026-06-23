@@ -1,108 +1,232 @@
-# KÔH-LIV — Simulateur travaux
+# 🏗️ KÔH-LIV — Simulateur de travaux
 
-Simulateur d'estimation de travaux pour logements en coliving.
-Accessible sur PC et smartphone, projets synchronisés dans le cloud.
+**Application web pour estimer les coûts de rénovation de coliving.**
+
+🌐 **Site live :** https://www.simulateur-travaux.koh-liv.fr/
 
 ---
 
-## Déploiement en 4 étapes
+## 🚀 Démarrage rapide (Développement local)
 
-### Étape 1 — GitHub
-
-1. Créez un compte sur [github.com](https://github.com) si vous n'en avez pas
-2. Cliquez **New repository**, nommez-le `kohliv-simulateur`, mettez-le en **Private**
-3. Sur votre ordinateur, ouvrez un terminal dans ce dossier et exécutez :
+### Installation
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/VOTRE_USERNAME/kohliv-simulateur.git
-git push -u origin main
-```
+# Cloner le repo
+git clone https://github.com/KOH-LIV/SIMULATEUR-DE-TRAVAUX.git
+cd SIMULATEUR-DE-TRAVAUX
 
----
-
-### Étape 2 — Supabase (base de données + auth)
-
-1. Créez un compte sur [supabase.com](https://supabase.com)
-2. Cliquez **New project**, choisissez un nom et un mot de passe (conservez-le)
-3. Une fois le projet créé, allez dans **SQL Editor → New query**
-4. Copiez-collez le contenu de `supabase/schema.sql` et cliquez **Run**
-5. Allez dans **Settings → API** et notez :
-   - **Project URL** (ex: `https://abc123.supabase.co`)
-   - **anon public** key
-
-6. Dans **Authentication → Email**, activez **Enable email confirmations** = OFF et **Magic Link** = ON
-
----
-
-### Étape 3 — Vercel (hébergement)
-
-1. Créez un compte sur [vercel.com](https://vercel.com) avec votre compte GitHub
-2. Cliquez **Add New Project**, sélectionnez `kohliv-simulateur`
-3. Dans **Environment Variables**, ajoutez :
-   - `VITE_SUPABASE_URL` → votre Project URL Supabase
-   - `VITE_SUPABASE_ANON_KEY` → votre anon key Supabase
-4. Cliquez **Deploy** — votre URL sera du type `kohliv-simulateur.vercel.app`
-
----
-
-### Étape 4 — Utilisation
-
-- Ouvrez l'URL Vercel sur votre PC et smartphone
-- Entrez votre email → recevez un lien de connexion
-- Cliquez le lien → vous êtes connecté
-- Vos projets sont automatiquement synchronisés entre tous vos appareils
-
----
-
-## Développement local
-
-```bash
 # Installer les dépendances
 npm install
+```
 
-# Copier les variables d'environnement
-cp .env.example .env.local
-# Renseignez VITE_SUPABASE_URL et VITE_SUPABASE_ANON_KEY dans .env.local
+### Développement
 
-# Lancer en développement
+```bash
+# Lancer le serveur local (http://localhost:5173)
 npm run dev
-# → http://localhost:5173
+```
 
-# Build de production
+### Build pour production
+
+```bash
+# Compiler en fichier HTML static
 npm run build
+
+# Un fichier simulateur-travaux.html sera généré
+# → À uploader sur O2switch via CPanel
 ```
 
 ---
 
-## Structure du projet
+## 📦 Déploiement sur O2switch
+
+### Étapes :
+
+1. **Compiler localement :**
+   ```bash
+   npm run build
+   ```
+
+2. **Accéder au CPanel O2switch**
+   - URL : https://www.simulateur-travaux.koh-liv.fr:2083
+   - Identifiants : (fournis par O2switch)
+
+3. **Uploader le fichier HTML**
+   - Gestionnaire de fichiers → `/public_html/` ou dossier du domaine
+   - Déposer `simulateur-travaux.html`
+
+4. **C'est live !**
+   - https://www.simulateur-travaux.koh-liv.fr/
+
+---
+
+## 🏗️ Structure du projet
 
 ```
 src/
-├── data/parametres.js     ← Tous les postes de travaux et coûts par défaut
+├── data/
+│   └── parametres.js          ← Tous les postes rénovation (~400 items)
+│                                Source unique vérité
+│
 ├── lib/
-│   ├── calcul.js          ← Logique de calcul (calcLigne, calcTotaux, KEY…)
-│   ├── supabase.js        ← Client Supabase
-│   └── storage.js         ← Fallback localStorage
-├── hooks/useProjet.js     ← Gestion des projets (save/load/sync)
-├── components/            ← Composants UI réutilisables
-└── tabs/                  ← Onglets de l'application
+│   ├── calculations.js         ← Logique calcul devis
+│   ├── exports.js              ← Générateurs PDF/CSV/JSON
+│   └── storage.js              ← Helpers localStorage
+│
+├── hooks/
+│   └── useProjet.js            ← State management projets
+│
+├── components/                 ← Composants UI atomiques
+│   ├── Card.jsx
+│   ├── Field.jsx
+│   ├── Btn.jsx
+│   ├── Pill.jsx
+│   ├── Toast.jsx
+│   └── ...
+│
+├── tabs/                       ← 5 onglets principaux
+│   ├── VisiteTab.jsx           Saisie infos chantier
+│   ├── TravauxTab.jsx          Multiselect items rénovation
+│   ├── ResultatsTab.jsx        Affichage devis calculé
+│   ├── ProjetsTab.jsx          Gestion projets (save/load/delete)
+│   └── SettingsTab.jsx         (optionnel)
+│
+├── styles/
+│   └── App.css                 ← CSS + responsive mobile
+│
+└── App.jsx                     ← App principale + router tabs
 ```
-
-**Pour ajouter un poste de travaux :** éditez `src/data/parametres.js`
-**Pour modifier un coût par défaut :** utilisez l'onglet Paramètres de l'app
-**Pour modifier l'interface :** éditez le composant correspondant dans `src/tabs/`
 
 ---
 
-## Mode hors-ligne
+## ⚙️ Configuration
 
-Si Supabase n'est pas configuré ou inaccessible, l'application fonctionne
-entièrement en local (localStorage). Les projets sont sauvegardés dans le
-navigateur et restent accessibles hors connexion.
+**Aucune configuration requise !**
 
-Pour transférer des projets entre appareils sans cloud : utilisez
-**⬇ Exporter JSON** / **⬆ Importer JSON** dans l'onglet Projets.
+- ✅ Pas de Supabase
+- ✅ Pas de variables d'environnement
+- ✅ Pas d'API externe
+- ✅ Stockage 100% **localStorage** (navigateur)
+
+---
+
+## 💾 Données & Sauvegarde
+
+### Projets stockés localement
+
+Chaque navigateur stocke les projets dans `localStorage` :
+- Limite : ~5-10 MB (navigateur dépendant)
+- Persiste après fermeture
+- Fonctionne offline
+
+### Transfert multi-device
+
+**Export / Import JSON :**
+- Onglet Projets → **Exporter JSON** (sauvegarde fichier)
+- Onglet Projets → **Importer JSON** (restaure sur autre appareil)
+
+---
+
+## 🎯 Utilisation courante
+
+### Ajouter une ligne de travaux
+
+**Fichier :** `src/data/parametres.js`
+
+```javascript
+const PIECES = {
+  'sdb': {
+    label: 'Salle de bain',
+    items: [
+      {
+        id: 'carrelage_murs_sdb',
+        label: 'Carrelage murs SDB',
+        prix_unitaire: 28,
+        unite: 'm²',
+        trade: 'carreleur'
+      }
+    ]
+  }
+}
+```
+
+L'item apparaît automatiquement dans tous les onglets. ✅
+
+### Ajouter une nouvelle pièce (room type)
+
+⚠️ **3 fichiers à modifier :**
+
+1. **`src/data/parametres.js`** → Ajouter `PIECES.nouvelle_piece`
+2. **`src/tabs/TravauxTab.jsx`** → Ajouter à `PIECES_ORDRE` et `ICONES`
+3. **`src/tabs/ResultatsTab.jsx`** → Ajouter à `PIECES_ORDRE` et `ICONES` (identique)
+
+Oubli = crash ou affichage vide. Voir `PROJECT_MEMORY.md` pour détails.
+
+---
+
+## 📚 Documentation
+
+- **[PROJECT_MEMORY.md](PROJECT_MEMORY.md)** — Architecture complète + contexte projet
+- **[README_CONTEXT.md](README_CONTEXT.md)** — Cheat sheet actions courantes
+- **[DECISIONS_LOG.md](DECISIONS_LOG.md)** — Historique bugs + décisions architecturales
+- **[CHANGELOG.md](CHANGELOG.md)** — Releases & versions
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend :** React 18 + Vite
+- **Styling :** CSS vanilla (responsive mobile-first)
+- **State :** React hooks + localStorage
+- **Export :** jspdf + html2canvas (lazy-loaded)
+- **Bundling :** Vite → Single HTML file
+- **Hosting :** O2switch CPanel
+
+---
+
+## 📊 Domaine métier (Coliving)
+
+- **Benchmark coûts :** 1,800–2,500 €/m² (vs 1,500 €/m² standard)
+- **Premium :** +20% pour isolation acoustique, wet rooms, finishes hauts
+- **Contingency :** +15-20% toujours recommandée
+- **Terminologie FR :** SHAB, ERP, VMC, gros œuvre, maîtrise d'œuvre
+
+---
+
+## 🚀 Roadmap
+
+### Phase 1 — Optimisations données
+- [ ] Compression localStorage (pako)
+- [ ] Lazy-load jspdf complet
+- [ ] Service Worker offline
+
+### Phase 2 — Performance
+- [ ] React.lazy() tabs
+- [ ] Minifier parametres.js
+- [ ] Code splitting
+
+### Phase 3 — Avancé
+- [ ] Virtualiser liste 400 items
+- [ ] Auto-générer PIECES_ORDRE
+- [ ] TypeScript
+
+---
+
+## 👤 Auteur
+
+**Ugo** — KÔH-LIV Toulouse
+
+---
+
+## 📄 Licence
+
+À définir
+
+---
+
+## ❓ Support
+
+Pour questions / bugs :
+- Ouvrir une issue sur GitHub
+- Consulter PROJECT_MEMORY.md
+
