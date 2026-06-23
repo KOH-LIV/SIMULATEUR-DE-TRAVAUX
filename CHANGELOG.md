@@ -1,8 +1,6 @@
 # 📦 CHANGELOG.md — Historique des versions
 
-**Format :** [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH)
-
-**Note :** À mettre à jour à chaque commit/feature. Inclure chaque changement.
+**Format :** [Semantic Versioning](https://semver.org/)
 
 ---
 
@@ -17,31 +15,31 @@
 ### Fixed
 - (Rien en cours)
 
-### Removed
-- (Rien en cours)
-
 ---
 
-## [1.2.3] — 2025-06-23
+## [1.3.0] — 2025-06-23
 
 ### Added
-- 📄 Documentation projet : PROJECT_MEMORY.md, README_CONTEXT.md, DECISIONS_LOG.md
-- 🔍 Memory system pour Claude (token optimization)
+- 📄 Documentation projet complète : PROJECT_MEMORY.md, README_CONTEXT.md, DECISIONS_LOG.md
+- 🔍 Memory system pour Claude (optimisation tokens dev)
 
 ### Changed
-- 📋 Organisation code + documentation
+- 🚀 **Migration Vercel → O2switch CPanel**
+  - Déploiement simplifié : fichier HTML unique
+  - URL : https://www.simulateur-travaux.koh-liv.fr/
+- 📝 README.md complètement reécrit (sans Supabase)
 
 ### Status
-- ✅ En production sur Vercel
+- ✅ En production sur O2switch
 
 ---
 
-## [1.2.2] — 2025-06-15
+## [1.2.3] — 2025-06-15
 
 ### Added
 - 🏋️ Support "Salle spéciale" (sport, jeux, musique, lecture) avec isolation acoustique renforcée
 - 📱 CSS responsive improvements (mobile first)
-- 🎨 Icons emoji pour chaque pièce (chambre 🛏️, SDB 🚿, cuisine 🍳, etc.)
+- 🎨 Icons emoji pour chaque pièce
 
 ### Fixed
 - 🐛 Tab Résultats vide après ajout nouvelle pièce
@@ -49,12 +47,9 @@
   - Solution : Sync lists + dépendances useMemo complètes
 - 🐛 useMemo stale values (dépendances manquantes)
 
-### Changed
-- ♻️ Refactor PIECES_ORDRE et ICONES (centralisés par tab)
-
 ---
 
-## [1.2.1] — 2025-06-10
+## [1.2.2] — 2025-06-10
 
 ### Added
 - 📋 Roadmap documentée (Phase 1, 2, 3)
@@ -69,7 +64,7 @@
 
 ---
 
-## [1.2.0] — 2025-06-01
+## [1.2.1] — 2025-06-01
 
 ### Added
 - ✅ Toast notifications système (success/error/warning)
@@ -94,7 +89,7 @@
 
 ---
 
-## [1.1.0] — 2025-05-20
+## [1.2.0] — 2025-05-20
 
 ### Added
 - 🎨 Composants UI atomiques réutilisables
@@ -104,11 +99,7 @@
   - Pill.jsx — Item selector (badge)
   - Toast.jsx — Notifications
 - 📱 Responsive CSS (mobile/tablet/desktop)
-- 🏠 Support multi-pièce
-  - Chambre (default)
-  - Salle de bain
-  - Cuisine
-  - Parties communes
+- 🏠 Support multi-pièce (Chambre, SDB, Cuisine, Parties communes)
 
 ### Changed
 - 🔄 Refactor TravauxTab (composants séparés)
@@ -116,7 +107,7 @@
 
 ---
 
-## [1.0.5] — 2025-05-10
+## [1.1.0] — 2025-05-10
 
 ### Added
 - 🧮 Calcul devis par pièce et par trade
@@ -129,7 +120,7 @@
 
 ---
 
-## [1.0.4] — 2025-05-05
+## [1.0.5] — 2025-05-05
 
 ### Added
 - ⭐ Source unique vérité : `parametres.js`
@@ -142,7 +133,7 @@
 
 ---
 
-## [1.0.3] — 2025-04-25
+## [1.0.4] — 2025-04-25
 
 ### Added
 - 💾 localStorage helpers
@@ -156,7 +147,7 @@
 
 ---
 
-## [1.0.2] — 2025-04-20
+## [1.0.3] — 2025-04-20
 
 ### Removed
 - ❌ Supabase authentication (config errors)
@@ -168,7 +159,7 @@
 
 ---
 
-## [1.0.1] — 2025-04-15
+## [1.0.2] — 2025-04-15
 
 ### Added
 - 🏗️ Vite setup + React configuration
@@ -176,99 +167,51 @@
 - 📱 Mobile-first approach
 - 🧭 Router tabs (Visite, Travaux, Résultats, Projets)
 
-### Changed
-- Initial project scaffolding
-
 ---
 
-## [1.0.0] — 2025-04-10
+## [1.0.1] — 2025-04-10
 
 ### Added
 - ✅ Initial release
 - 📝 React boilerplate
-- 🚀 Vercel deployment setup
+- 🚀 Initial deployment setup
 - 🐙 GitHub repo creation
 
 ---
 
-## Guide CHANGELOG pour future contributions
+## Guide pour future contributions
 
-### Format à respecter :
+### Format :
 
 ```markdown
 ## [X.Y.Z] — YYYY-MM-DD
 
 ### Added
 - 📌 Nouvelle feature (emoji + description courte)
-- 🎨 UI changes
 
 ### Changed
 - ♻️ Refactorings
-- 🔄 API changes
 
 ### Fixed
 - 🐛 Bug fix
-  - Cause : Explication root cause
-  - Solution : Comment c'est résolu
+  - Cause : Explication
+  - Solution : Fix
 
 ### Removed
 - ❌ Feature supprimée
   - Raison : Pourquoi
-  - Remplacement : Quoi à la place
 ```
 
-### Émojis recommandés :
+### Avant merger :
 
-| Emoji | Usage |
-|-------|-------|
-| ✨ | New feature |
-| 🐛 | Bug fix |
-| ♻️ | Refactor |
-| 📱 | UI/UX |
-| 🔄 | Changed |
-| ❌ | Removed |
-| 📊 | Data/metrics |
-| 🔧 | Config |
-| 📄 | Docs |
-| 🚀 | Performance |
-| 💾 | Storage |
-| 🧮 | Calculation |
-
-### Avant de merger/committer :
-
-- [ ] Tester feature localement (`npm run dev`)
+- [ ] Tester localement (`npm run dev`)
 - [ ] Vérifier export PDF + CSV
 - [ ] Test mobile (DevTools)
-- [ ] localStorage test (F12 → Application)
-- [ ] Updater CHANGELOG.md avec section [Unreleased]
+- [ ] Build (`npm run build`)
+- [ ] Updater CHANGELOG.md
 - [ ] Git commit avec message clair
-- [ ] Push to `main` → Auto-deploy Vercel
+- [ ] Push to main
+- [ ] Upload .html à O2switch
 
 ---
-
-## Roadmap visibilité
-
-### Phase 1 — Optimisations données (Q3 2025)
-- [ ] Compression localStorage pako
-- [ ] Lazy-load jspdf complètement
-- [ ] Service Worker offline
-
-**Gain estimé :** localStorage -70%, bundle -30%
-
-### Phase 2 — Performance React (Q3-Q4 2025)
-- [ ] React.lazy() tabs
-- [ ] Minifier parametres.js
-- [ ] Dédupliquer items
-
-**Gain estimé :** bundle -35%, TTI -40%
-
-### Phase 3 — Avancé (2026)
-- [ ] Virtualiser liste 400 items
-- [ ] Auto-générer PIECES_ORDRE
-- [ ] TypeScript + types
-
-**Gain estimé :** Performance, maintenabilité
-
----
-
 
